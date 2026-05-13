@@ -1,0 +1,251 @@
+/* ──────────────────────────────────────────────────────────
+   LANDING PAGE — RESPONSIVE NAVBAR
+   ────────────────────────────────────────────────────────── */
+
+/* ── RESPONSIVE NAVBAR ── */
+.vmms-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.vmms-navbar-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.vmms-nav-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+  position: relative;
+}
+
+.vmms-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+  margin-right: auto;
+}
+
+.vmms-logo-accent { color: #1D9E75; }
+
+.vmms-nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2.5rem;
+}
+
+.vmms-nav-links li {
+  display: list-item;
+}
+
+.vmms-nav-links a {
+  text-decoration: none;
+  color: #374151;
+  font-size: 0.9375rem;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.vmms-nav-links a:hover { color: #1D9E75; }
+
+.vmms-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.vmms-nav-user-name {
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.vmms-hamburger {
+  display: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #374151;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vmms-btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.375rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.vmms-btn-primary { background-color: #1D9E75; color: white; }
+.vmms-btn-primary:hover { background-color: #0F6E56; color: white; }
+
+.vmms-btn-outline {
+  background-color: transparent;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.vmms-btn-outline:hover {
+  background-color: #f9fafb;
+  border-color: #1D9E75;
+}
+
+/* ── DESKTOP (min 769px) ── */
+@media (min-width: 769px) {
+  .vmms-navbar-wrapper {
+    flex-direction: row !important;
+    gap: 0 !important;
+    text-align: left !important;
+  }
+
+  .vmms-nav-top {
+    width: auto;
+    flex: 1;
+  }
+
+  .vmms-logo {
+    margin-right: 0;
+  }
+
+  .vmms-nav-links {
+    flex: 1;
+    justify-content: center;
+    gap: 2.5rem;
+    position: static !important;
+    background: transparent !important;
+    border: none !important;
+    top: auto !important;
+    display: flex !important;
+  }
+
+  .vmms-nav-right {
+    display: flex !important;
+  }
+
+  .vmms-hamburger {
+    display: none !important;
+  }
+}
+
+/* ── MOBILE (max 768px) ── */
+@media (max-width: 768px) {
+  .vmms-navbar {
+    height: 56px;
+    padding: 0 1rem;
+    position: relative;
+  }
+
+  .vmms-navbar-wrapper {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    text-align: left !important;
+  }
+
+  .vmms-nav-top {
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .vmms-logo {
+    font-size: 1.1rem;
+    margin-right: auto;
+  }
+
+  .vmms-hamburger {
+    display: block !important;
+    order: 2;
+    margin-left: auto;
+  }
+
+  .vmms-nav-right {
+    display: none !important;
+  }
+
+  .vmms-nav-links {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    z-index: 998;
+    border-radius: 0;
+  }
+
+  .vmms-nav-links.active {
+    display: flex !important;
+  }
+
+  .vmms-nav-links li {
+    border-bottom: 1px solid #f3f4f6;
+    padding: 0;
+    margin: 0;
+  }
+
+  .vmms-nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .vmms-nav-links a {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .vmms-btn {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.78rem;
+  }
+}
+
+/* ── SMALL MOBILE (max 480px) ── */
+@media (max-width: 480px) {
+  .vmms-navbar {
+    height: 52px;
+    padding: 0 0.75rem;
+  }
+
+  .vmms-logo {
+    font-size: 1rem;
+  }
+
+  .vmms-hamburger {
+    font-size: 1.2rem;
+  }
+
+  .vmms-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.72rem;
+  }
+}
