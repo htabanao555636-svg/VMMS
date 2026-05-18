@@ -291,7 +291,7 @@
 
             <div style="display:flex;align-items:flex-start;gap:10px;
                 margin-bottom:28px;font-size:13px;color:#6b7280;">
-                <input type="checkbox" name="terms" required
+                <input type="checkbox" name="agree_terms" required
                        style="accent-color:#2d9b6f;margin-top:2px;
                        width:15px;height:15px;flex-shrink:0;">
                 <span>I agree to the 
