@@ -14,7 +14,7 @@ class ProfileController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('Customer.profile', compact('user'));
+        return view('customer.profile', compact('user'));
     }
 
     /**

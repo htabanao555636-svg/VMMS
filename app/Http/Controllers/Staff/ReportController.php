@@ -40,6 +40,6 @@ class ReportController extends Controller
             'in_progress_requests' => ServiceRequest::where('status', 'in_progress')->count(),
         ];
 
-        return view('Staff.report', compact('serviceRequests', 'stats'));
+        return view('staff.report', compact('serviceRequests', 'stats'));
     }
 }

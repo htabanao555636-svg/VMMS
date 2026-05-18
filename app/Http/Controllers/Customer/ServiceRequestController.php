@@ -24,7 +24,7 @@ class ServiceRequestController extends Controller
             ->paginate(15)
             ->appends(request()->query());
 
-        return view('Customer.service-requests.index', compact('serviceRequests'));
+        return view('customer.service-requests.index', compact('serviceRequests'));
     }
 
     /**
@@ -38,7 +38,7 @@ class ServiceRequestController extends Controller
         }
 
         $serviceRequest->load(['services', 'mechanic']);
-        return view('Customer.service-requests.show', compact('serviceRequest'));
+        return view('customer.service-requests.show', compact('serviceRequest'));
     }
 
     /**
@@ -52,7 +52,7 @@ class ServiceRequestController extends Controller
             ->paginate(10)
             ->appends(request()->query());
 
-        return view('Customer.my-services', compact('serviceRequests'));
+        return view('customer.my-services', compact('serviceRequests'));
     }
 
     /**

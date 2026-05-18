@@ -17,7 +17,7 @@ class WheelerCategoryController extends Controller
         $activeCount       = WheelerCategory::where('status', 'active')->count();
         $inactiveCount     = WheelerCategory::where('status', 'inactive')->count();
 
-        return view('Admin.category', compact('wheelerCategories', 'activeCount', 'inactiveCount'));
+        return view('admin.category', compact('wheelerCategories', 'activeCount', 'inactiveCount'));
     }
 
     public function storeWheelerCategory(Request $request)

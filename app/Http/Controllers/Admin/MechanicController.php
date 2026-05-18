@@ -40,12 +40,12 @@ class MechanicController extends Controller
                                    ->orderBy('specialization')
                                    ->pluck('specialization');
 
-        return view('Admin.mechanics', compact('mechanics', 'specializations'));
+        return view('admin.mechanics', compact('mechanics', 'specializations'));
     }
 
     public function create()
     {
-        return view('Admin.mechanics.create');
+        return view('admin.mechanics.create');
     }
 
     public function store(Request $request)
@@ -73,12 +73,12 @@ class MechanicController extends Controller
 
     public function show(Mechanic $mechanic)
     {
-        return view('Admin.mechanics.show', compact('mechanic'));
+        return view('admin.mechanics.show', compact('mechanic'));
     }
 
     public function edit(Mechanic $mechanic)
     {
-        return view('Admin.mechanics.edit', compact('mechanic'));
+        return view('admin.mechanics.edit', compact('mechanic'));
     }
 
     public function update(Request $request, Mechanic $mechanic)

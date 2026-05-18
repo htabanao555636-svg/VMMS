@@ -18,7 +18,7 @@ class ServiceController extends Controller
         $avgPrice      = Service::avg('price') ?? 0;
         $totalServices = Service::count();
 
-        return view('Admin.services', compact('services', 'activeCount', 'inactiveCount',
+        return view('admin.services', compact('services', 'activeCount', 'inactiveCount',
         'avgPrice', 'totalServices', 'wheelerCategories'));
     }
 
@@ -28,7 +28,7 @@ class ServiceController extends Controller
     public function create()
     {
         $categories = WheelerCategory::where('status', 'active')->get();
-        return view('Admin.services.create', compact('categories'));
+        return view('admin.services.create', compact('categories'));
     }
 
     /**
@@ -55,7 +55,7 @@ class ServiceController extends Controller
     public function show(Service $service)
     {
         $service->load('wheelerCategory');
-        return view('Admin.services.show', compact('service'));
+        return view('admin.services.show', compact('service'));
     }
 
     /**
@@ -64,7 +64,7 @@ class ServiceController extends Controller
     public function edit(Service $service)
     {
         $categories = WheelerCategory::where('status', 'active')->get();
-        return view('Admin.services.edit', compact('service', 'categories'));
+        return view('admin.services.edit', compact('service', 'categories'));
     }
 
     /**

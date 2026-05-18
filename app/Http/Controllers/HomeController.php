@@ -22,7 +22,7 @@ class HomeController extends Controller
         ->orderBy('name')
         ->get();
 
-    return view('User.home', compact('categories', 'services'));
+    return view('user.home', compact('categories', 'services'));
 
     }
         

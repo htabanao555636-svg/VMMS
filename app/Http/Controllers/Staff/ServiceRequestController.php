@@ -50,7 +50,7 @@ class ServiceRequestController extends Controller
         $staff = User::whereIn('role', ['admin', 'staff'])->get();
         $statuses = ['pending', 'approved', 'in_progress', 'completed', 'cancelled'];
 
-        return view('Staff.service-request', compact('serviceRequests', 'mechanics', 'staff', 'statuses'));
+        return view('staff.service-request', compact('serviceRequests', 'mechanics', 'staff', 'statuses'));
     }
 
     /**
@@ -62,7 +62,7 @@ class ServiceRequestController extends Controller
         $mechanics = Mechanic::where('status', 'active')->get();
         $services = Service::where('status', 'active')->with('category')->get();
         
-        return view('Staff.service-requests.create', compact('customers', 'mechanics', 'services'));
+        return view('staff.service-requests.create', compact('customers', 'mechanics', 'services'));
     }
 
     /**
@@ -144,7 +144,7 @@ class ServiceRequestController extends Controller
             'statusHistory.changedBy',
         ]);
         
-        return view('Staff.service-request-detail', compact('serviceRequest'));
+        return view('staff.service-request-detail', compact('serviceRequest'));
     }
 
     /**
@@ -339,7 +339,7 @@ class ServiceRequestController extends Controller
         
         $serviceRequest->load(['services']);
         
-        return view('Staff.service-requests.edit', compact('serviceRequest', 'customers', 'mechanics', 'services'));
+        return view('staff.service-requests.edit', compact('serviceRequest', 'customers', 'mechanics', 'services'));
     }
 
     /**

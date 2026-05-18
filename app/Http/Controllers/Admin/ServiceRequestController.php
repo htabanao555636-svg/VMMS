@@ -50,7 +50,7 @@ class ServiceRequestController extends Controller
         $statuses   = ['pending', 'approved', 'in_progress', 'completed', 'cancelled'];
         $categories = WheelerCategory::all();
 
-        return view('Admin.service-request', compact(
+        return view('admin.service-request', compact(
             'serviceRequests',
             'mechanics',
             'staff',
@@ -66,7 +66,7 @@ class ServiceRequestController extends Controller
         $services   = Service::where('status', 'active')->with('wheelerCategory')->get();
         $categories = WheelerCategory::all();
 
-        return view('Admin.service-requests.create', compact('customers', 'mechanics', 'services', 'categories'));
+        return view('admin.service-requests.create', compact('customers', 'mechanics', 'services', 'categories'));
     }
 
     public function store(Request $request)
@@ -151,7 +151,7 @@ class ServiceRequestController extends Controller
             'statusHistory.changedBy',
         ]);
 
-        return view('Admin.service-requests.show', compact('serviceRequest'));
+        return view('admin.service-requests.show', compact('serviceRequest'));
     }
 
     public function edit(ServiceRequest $serviceRequest)
@@ -163,7 +163,7 @@ class ServiceRequestController extends Controller
 
         $serviceRequest->load(['services']);
 
-        return view('Admin.service-requests.edit', compact('serviceRequest', 'customers', 'mechanics', 'services', 'categories'));
+        return view('admin.service-requests.edit', compact('serviceRequest', 'customers', 'mechanics', 'services', 'categories'));
     }
 
     public function update(Request $request, ServiceRequest $serviceRequest)

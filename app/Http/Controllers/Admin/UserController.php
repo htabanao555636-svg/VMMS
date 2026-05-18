@@ -19,7 +19,7 @@ class UserController extends Controller
         $customers = User::where('role', 'customer')->count();
         $total = User::count();
         
-        return view('Admin.users', compact('users', 'admins', 'staff', 'customers', 'total'));
+        return view('admin.users', compact('users', 'admins', 'staff', 'customers', 'total'));
     }
 
     /**
@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('Admin.users.create');
+        return view('admin.users.create');
     }
 
     /**
@@ -56,7 +56,7 @@ class UserController extends Controller
     public function show(User $user)
     {
         $user->load(['vehicles', 'serviceRequests']);
-        return view('Admin.users.show', compact('user'));
+        return view('admin.users.show', compact('user'));
     }
 
     /**
@@ -64,7 +64,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('Admin.users.edit', compact('user'));
+        return view('admin.users.edit', compact('user'));
     }
 
     /**

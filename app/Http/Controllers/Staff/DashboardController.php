@@ -34,7 +34,7 @@ class DashboardController extends Controller
         // Active Mechanics count
         $activeMechanicsCount = Mechanic::where('status', 'active')->count();
 
-        return view('Staff.dashboard', compact(
+        return view('staff.dashboard', compact(
             'totalServiceRequestsToday',
             'pendingPaymentsCount',
             'verifiedPaymentsCount',

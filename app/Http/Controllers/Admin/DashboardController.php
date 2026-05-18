@@ -112,7 +112,7 @@ class DashboardController extends Controller
             ->orderByDesc('total')
             ->get();
 
-        return view('Admin.dashboard', compact(
+        return view('admin.dashboard', compact(
             'totalCategories',
             'activeMechanics',
             'availableServices',

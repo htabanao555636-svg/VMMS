@@ -14,7 +14,7 @@ class MechanicController extends Controller
     public function index()
     {
         $mechanics = Mechanic::paginate(10)->appends(request()->query());
-        return view('Staff.mechanics', compact('mechanics'));
+        return view('staff.mechanics', compact('mechanics'));
     }
 
     /**
@@ -22,6 +22,6 @@ class MechanicController extends Controller
      */
     public function show(Mechanic $mechanic)
     {
-        return view('Staff.mechanics.show', compact('mechanic'));
+        return view('staff.mechanics.show', compact('mechanic'));
     }
 }
