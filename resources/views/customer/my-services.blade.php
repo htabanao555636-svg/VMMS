@@ -951,7 +951,7 @@
                     <span style="font-size:11px; color:#9ca3af; margin-top:4px;">
                         JPG, PNG, WEBP up to 5MB
                     </span>
-                    <input type="file" id="proof_image" name="proof_image"
+                    <input type="file" id="proof_image" accept="image/jpg,image/jpeg,image/png" name="proof_image"
                         accept="image/*" required
                         style="display:none;"
                         onchange="previewFile(this)">

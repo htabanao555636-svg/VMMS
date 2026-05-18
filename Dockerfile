@@ -121,7 +121,8 @@ RUN mkdir -p storage/framework/cache storage/framework/sessions storage/framewor
 && chmod -R 775 storage bootstrap/cache public/uploads
 
 
-
+RUN echo "upload_max_filesize = 10M" >> /usr/local/etc/php/php.ini \
+    && echo "post_max_size = 10M" >> /usr/local/etc/php/php.ini
 EXPOSE 10000
 
 
