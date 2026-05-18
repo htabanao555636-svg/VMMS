@@ -237,9 +237,7 @@
                 <label>Full Name</label>
                 <div class="input-wrap">
                     <i class="fas fa-user"></i>
-                    <input type="text" name="name" 
-                           value="{{ old('name') }}"
-                           placeholder="Enter your full name" required>
+                    <input type="text" name="name" value="{{ old('name') }}" placeholder="Enter your full name" required>
                 </div>
             </div>
 
@@ -247,9 +245,7 @@
                 <label>Email Address</label>
                 <div class="input-wrap">
                     <i class="fas fa-envelope"></i>
-                    <input type="email" name="email" 
-                           value="{{ old('email') }}"
-                           placeholder="you@example.com" required>
+                    <input type="email" name="email" value="{{ old('email') }}" placeholder="you@example.com" required>
                 </div>
             </div>
 
@@ -257,9 +253,7 @@
                 <label>Phone Number <span style="color:#9ca3af;font-weight:400;">(Optional)</span></label>
                 <div class="input-wrap">
                     <i class="fas fa-phone"></i>
-                    <input type="text" name="phone" 
-                           value="{{ old('phone') }}"
-                           placeholder="Enter your phone number">
+                    <input type="text" name="phone" value="{{ old('phone') }}" placeholder="Enter your phone number">
                 </div>
             </div>
 
@@ -267,10 +261,8 @@
                 <label>Password</label>
                 <div class="input-wrap">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="password" 
-                           id="pw1" placeholder="Min. 8 characters" required>
-                    <button type="button" class="toggle-pw" 
-                            onclick="togglePw('pw1', this)">
+                    <input type="password" name="password" id="pw1" placeholder="Min. 8 characters" required>
+                    <button type="button" class="toggle-pw" onclick="togglePw('pw1', this)">
                         <i class="fas fa-eye"></i>
                     </button>
                 </div>
@@ -280,23 +272,18 @@
                 <label>Confirm Password</label>
                 <div class="input-wrap">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="password_confirmation" 
-                           id="pw2" placeholder="Confirm your password" required>
-                    <button type="button" class="toggle-pw" 
-                            onclick="togglePw('pw2', this)">
+                    <input type="password" name="password_confirmation" id="pw2" placeholder="Confirm your password" required>
+                    <button type="button" class="toggle-pw" onclick="togglePw('pw2', this)">
                         <i class="fas fa-eye"></i>
                     </button>
                 </div>
             </div>
 
-            <div style="display:flex;align-items:flex-start;gap:10px;
-                margin-bottom:28px;font-size:13px;color:#6b7280;">
+            <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:28px;font-size:13px;color:#6b7280;">
                 <input type="checkbox" name="agree_terms" required
-                       style="accent-color:#2d9b6f;margin-top:2px;
-                       width:15px;height:15px;flex-shrink:0;">
-                <span>I agree to the 
-                    <a href="#" style="color:#2d9b6f;font-weight:600;">
-                    Terms & Conditions</a>
+                       style="accent-color:#2d9b6f;margin-top:2px;width:15px;height:15px;flex-shrink:0;">
+                <span>I agree to the
+                    <a href="#" style="color:#2d9b6f;font-weight:600;">Terms & Conditions</a>
                 </span>
             </div>
 
