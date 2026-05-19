@@ -50,7 +50,7 @@ class UserServiceRequestController extends Controller
             'request_type' => 'required|in:drop-off,pickup',
             'payment_type' => 'required|in:downpayment,full',
             'downpayment_percentage' => 'required_if:payment_type,downpayment|nullable|numeric|in:20,25,30,50',
-            'proof_of_payment' => 'required|image|mimes:jpeg,png|max:2048',
+            'proof_of_payment' => 'required|image|mimes:jpeg,png|max:10240',
         ]);
 
         // Find or create customer

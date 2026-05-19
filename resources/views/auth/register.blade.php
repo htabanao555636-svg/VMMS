@@ -250,10 +250,10 @@
             </div>
 
             <div class="field-group">
-                <label>Phone Number <span style="color:#9ca3af;font-weight:400;">(Optional)</span></label>
+                <label>Phone Number</label>
                 <div class="input-wrap">
                     <i class="fas fa-phone"></i>
-                    <input type="text" name="phone" value="{{ old('phone') }}" placeholder="Enter your phone number">
+                    <input type="text" name="phone" value="{{ old('phone') }}" placeholder="Enter your phone number" required>
                 </div>
             </div>
 

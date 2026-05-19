@@ -77,7 +77,7 @@ class CustomerController extends Controller
     {
         $request->validate([
             'service_request_id' => 'required|exists:service_requests,id',
-            'proof_image'        => 'required|image|mimes:jpeg,png|max:5120',
+            'proof_image'        => 'required|image|mimes:jpeg,png|max:10240',
         ]);
 
         $sr = ServiceRequest::with('payments')

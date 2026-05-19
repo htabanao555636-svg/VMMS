@@ -26,7 +26,7 @@ class RegisteredUserController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'phone' => 'nullable|string|max:20',
+            'phone' => 'required|string|max:20',
             'password' => 'required|string|min:8|confirmed',
             'agree_terms' => 'required|accepted',
         ]);
@@ -34,7 +34,7 @@ class RegisteredUserController extends Controller
         $user = User::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
-            'phone' => $validated['phone'] ?? null,
+            'phone' => $validated['phone'],
             'password' => Hash::make($validated['password']),
             'role' => 'customer', // Default role for new customers
             'is_active' => true,

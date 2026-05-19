@@ -76,7 +76,7 @@ class CustomerDashboardController extends Controller
 
         // Validate
         $validated = $request->validate([
-            'proof_of_payment' => 'required|image|mimes:jpeg,png|max:2048',
+            'proof_of_payment' => 'required|image|mimes:jpeg,png|max:10240',
         ]);
 
         // Store file
@@ -105,7 +105,7 @@ class CustomerDashboardController extends Controller
 
         // Validate
         $validated = $request->validate([
-            'proof_of_payment' => 'required|image|mimes:jpeg,png|max:2048',
+            'proof_of_payment' => 'required|image|mimes:jpeg,png|max:10240',
         ]);
 
         // Store file
