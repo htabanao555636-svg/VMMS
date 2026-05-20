@@ -40,7 +40,6 @@ class CustomerController extends Controller
 
     public function myPayables()
     {
-        // Completed requests where customer still owes money
         $payables = ServiceRequest::where('customer_id', auth()->id())
             ->where('status', 'completed')
             ->with(['services', 'payments'])
@@ -91,13 +90,14 @@ class CustomerController extends Controller
             return back()->with('error', 'This service request is already fully paid.');
         }
 
-        // Block double submission — don't allow if a pending proof already exists
         $hasPending = $sr->payments->where('status', 'pending')->count() > 0;
         if ($hasPending) {
             return back()->with('error', 'You already have a payment proof awaiting verification.');
         }
 
-        $path = $request->file('proof_image')->store('payment_proofs', 'public');
+        // CHANGED: store as base64 instead of disk
+        $file = $request->file('proof_image');
+        $path = 'data:' . $file->getMimeType() . ';base64,' . base64_encode(file_get_contents($file));
 
         Payment::create([
             'service_request_id' => $sr->id,
