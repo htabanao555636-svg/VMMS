@@ -74,7 +74,7 @@ class ReportController extends Controller
             'status'    => $status,
         ];
 
-        $viewPath = 'Admin.report';
+        $viewPath = 'admin.report';
 
         return view($viewPath, compact(
             'serviceRequests',
